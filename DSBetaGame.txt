@@ -8,7 +8,7 @@ Let's make a game!
 Settings
 	building cost increase:102%
 	building cost refund:50%
-    stylesheet: https://raw.githubusercontent.com/SamRahbar/DSBetaTrainGame/main/style
+    stylesheet:https://raw.githubusercontent.com/SamRahbar/DSBetaTrainGame/main/style
 
 Layout
     use default

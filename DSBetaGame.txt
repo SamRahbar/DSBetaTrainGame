@@ -1,0 +1,98 @@
+Let's make a game!
+  	name:DSBeta Train Game
+	author:Sam Rahbar
+	desc:Idle game demo of train concept
+	created:11/04/2023
+	version:0.01
+
+Settings
+	building cost increase:102%
+	building cost refund:50%
+	
+CSS
+    #game{
+        background:#00233c;
+        font-family:"Fira Code", "Sans Serif";
+        color:white;
+    }
+    .trainButtonIcon{
+        width: 200px;
+        height: 200px;
+        background-image: url(https://media.tenor.com/P6Mmdw2AixsAAAAC/cryptoflash-tattoo.gif);
+        background-size:100%;
+    }
+    .trainButton{
+        width:200px;
+        height:200px;
+        display:inline-block;
+    }
+    #box-buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+Layout
+    use default
+
+Resources
+	*km
+		name:Kilometer|Kilometers
+		desc:Distance travelled
+		text:You have [?(this=0)|no km|[this] km]. Total earned: [(km:earned)]
+        show earned
+        tag:km
+        on earn:
+            if ((km:earned)=10)
+                spawn aarhus
+            else if ((km:earned)=20)
+                spawn grenaa
+            end
+        end
+
+    *xp
+        name:Experience Point|Experience Points
+        desc:Experience gained from traveling
+        text:You have [?(this=0)|no Experience Points|[this] Experience Points]
+
+
+Buttons
+    *train
+		name:Your train
+		desc:Shows your train
+        no text
+        icon:https://media.tenor.com/P6Mmdw2AixsAAAAC/cryptoflash-tattoo.gif
+        icon class:trainButtonIcon
+        class:trainButton
+    
+
+Buildings
+    *strain
+        name:S-Train
+        desc:Travel by S-Train and gain 1 km per second
+        on tick:yield 1 km
+        no buy
+        hidden
+        start with:1
+      
+
+    *xpTrainKart
+        name:XP Train Kart
+        desc:Gain passive xp with this train kart
+        on tick:yield 1 xp
+        cost:10 km
+
+
+Shinies
+    *aarhus
+        name:Århus Train Station
+        on click:yield (random(10,100)) xp
+        movement:onThing:train moveBottom growShrink
+        duration:50
+    *grenaa
+        name:Grenå Station
+        on click:yield (random(10,200)) xp
+        movement:onThing:train moveBottom growShrink
+        duration:50
+    

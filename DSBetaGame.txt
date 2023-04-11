@@ -69,13 +69,13 @@ Buildings
 
 Shinies
     *aarhus
-        name:Ã…rhus Train Station
+        name:Århus Train Station
         on click:yield (random(10,100)) xp
         on click:yield 1 stationVisit
         movement:onThing:train moveBottom growShrink
         duration:50
     *grenaa
-        name:GrenÃ¥ Station
+        name:Grenå Station
         on click:yield (random(10,200)) xp
         on click:yield 1 stationVisit
         movement:onThing:train moveBottom growShrink

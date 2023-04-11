@@ -85,9 +85,9 @@ Achievements
     *1station
         name:Wowie! You've visited 1 train station!
         desc:You've reached 1 train station on your journey this far. What adventures are next?
-        req:1 stationVisit:earned
+        req:1 stationVisits:earned
 
     *2station
         name:Wooooooooooooooooowie! You've visited 2 train station!
         desc:You've reached 2 train station on your journey this far. What adventures are next?
-        req:2 stationVisit:earned
+        req:2 stationVisits:earned

@@ -6,7 +6,6 @@
 .trainButtonIcon {
 	width: 200px;
 	height: 200px;
-	background-image: url(https://raw.githubusercontent.com/SamRahbar/DSBetaTrainGame/main/assets/train.gif);
 	background-size: 100%;
 }
 .trainButton {

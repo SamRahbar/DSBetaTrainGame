@@ -1,0 +1,21 @@
+#game {
+	background: #00233c;
+	font-family: "Fira Code", "Sans Serif";
+	color: white;
+}
+.trainButtonIcon {
+	width: 200px;
+	height: 200px;
+	background-image: url(https://media.tenor.com/P6Mmdw2AixsAAAAC/cryptoflash-tattoo.gif);
+	background-size: 100%;
+}
+.trainButton {
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+}
+#box-buttons {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}

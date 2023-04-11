@@ -3,6 +3,12 @@
 	font-family: "Fira Code", "Sans Serif";
 	color: white;
 }
+
+#content {
+	display: grid;
+	grid-template-areas: "main main store";
+}
+
 .trainButtonIcon {
 	width: 200px;
 	height: 200px;
@@ -13,8 +19,52 @@
 	height: 200px;
 	display: inline-block;
 }
-#box-buttons {
+
+#box-things-Resources {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-content: center;
+}
+
+#box-things-Buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#box-things-Buildings {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-content: center;
+}
+
+#box-buildings .box-things {
+	/*border: solid blue;*/
+	background-color: #2c2a78;
+}
+
+.shiny {
+	background-color: white;
+	color: black;
+	text-decoration: none;
+	font-family: "Fira Code";
+}
+
+#box-main {
+	grid-area: main;
+}
+
+#box-store {
+	grid-area: store;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+}
+
+.thing {
+	display: inline-block;
+	padding: 1px;
+	margin: 2px;
+	cursor: pointer;
 }

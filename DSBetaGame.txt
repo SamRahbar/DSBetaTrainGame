@@ -8,30 +8,7 @@ Let's make a game!
 Settings
 	building cost increase:102%
 	building cost refund:50%
-	
-CSS
-    #game{
-        background:#00233c;
-        font-family:"Fira Code", "Sans Serif";
-        color:white;
-    }
-    .trainButtonIcon{
-        width: 200px;
-        height: 200px;
-        background-image: url(https://media.tenor.com/P6Mmdw2AixsAAAAC/cryptoflash-tattoo.gif);
-        background-size:100%;
-    }
-    .trainButton{
-        width:200px;
-        height:200px;
-        display:inline-block;
-    }
-    #box-buttons{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
+    stylesheet: https://raw.githubusercontent.com/SamRahbar/DSBetaTrainGame/main/styles.css
 
 Layout
     use default
@@ -56,13 +33,19 @@ Resources
         desc:Experience gained from traveling
         text:You have [?(this=0)|no Experience Points|[this] Experience Points]
 
+    *stationVisit|stationVisits
+        name:Station Visited|Stations Visited
+        desc:The number of stations you've visited
+        text:You have [?(this=0)|not visited any stations|visited [this] stations!]
+
+
 
 Buttons
     *train
 		name:Your train
 		desc:Shows your train
         no text
-        icon:https://media.tenor.com/P6Mmdw2AixsAAAAC/cryptoflash-tattoo.gif
+        icon:https://raw.githubusercontent.com/SamRahbar/DSBetaTrainGame/main/assets/train.gif
         icon class:trainButtonIcon
         class:trainButton
     
@@ -88,11 +71,22 @@ Shinies
     *aarhus
         name:Århus Train Station
         on click:yield (random(10,100)) xp
+        on click:yield 1 stationVisit
         movement:onThing:train moveBottom growShrink
         duration:50
     *grenaa
         name:Grenå Station
         on click:yield (random(10,200)) xp
+        on click:yield 1 stationVisit
         movement:onThing:train moveBottom growShrink
         duration:50
-    
+
+Achievements
+    *1Station
+        name:Wowie! You've visited 1 train station!
+        desc: You've reached 1 train station on your journey this far. What adventures are next?
+        req: 1 stationVisit
+    *2Station
+        name:Wooooooooooooooooowie! You've visited 2 train station!
+        desc: You've reached 2 train station on your journey this far. What adventures are next?
+        req: 2 stationVisit
